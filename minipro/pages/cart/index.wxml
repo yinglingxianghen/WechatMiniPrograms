@@ -1,0 +1,95 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="numberInfo">
+ **您的到来使这里蓬荜生辉,祝您看菜愉快**</view>
+  <view class="container">
+    <view class="lineHeight" type="text">菜名:
+     <input class='input-7' name="nicheng" placeholder='菜名'></input>
+  </view>
+  <view class="lineHeight" type="text">
+     <!-- <input class='input-7' name="sex" placeholder='性别'></input> -->
+     <radio-group name="sex">性别:
+      <label><radio value="女"/>女</label>
+      <label><radio value="男"/>男</label>
+    </radio-group>
+  </view>
+  <view class="lineHeight" type="text">年龄:
+     <input class='input-7' name="age" placeholder='年龄'></input>
+  </view>
+  
+  <view class="lineHeight" type="text">身高:
+     <input class='input-7' name="height" placeholder='身高'></input>
+  </view>
+  
+<view class="lineHeight" type="text">
+      <view class="section">
+          <picker mode="region" bindchange="bindRegionChange" name="suozaidi" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              所在地: <text class='select' name="suozaidi">{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+            </view>
+         </picker>
+  </view>
+  </view>
+  
+<!-- <view class="lineHeight" type="text">
+      <view class="section">
+          <picker mode="region" bindchange="bindRegionChange2" name="chushengdi" value="{{region2}}" custom-item="{{customItem}}">
+            <view class="picker">
+              出生地: <text class='select' name="chushengdi">{{region2[0]}}，{{region2[1]}}，{{region2[2]}}</text>
+            </view>
+         </picker>
+  </view>
+  </view> -->
+  <view class="lineHeight" type="text">职业:
+     <input class='input-7' name="zhiye" placeholder='职业'></input>
+  </view>
+  <!-- <view class="lineHeight" type="text">标签:
+     <input class='input-7' name="xueli" placeholder='标签'></input>
+  </view> -->
+   <!-- <view class="lineHeight" type="text">关于家庭:
+     <input class='input-7' name="home" placeholder='关于家庭'></input>
+  </view> -->
+   <view class="lineHeight" type="text">兴趣爱好:
+     <input class='input-7' name="interest" placeholder='兴趣爱好'></input>
+  </view>
+  <!-- <view class="lineHeight" type="text">收入:
+     <input class='input-7' name="shouru" placeholder='要求'></input>
+  </view> -->
+  <!-- <view class="lineHeight" type="text">结过婚否:
+     <input class='input-7' name="jiehun" placeholder='要求'></input>
+  </view>
+  <view class="lineHeight" type="text">有房车否:
+     <input class='input-7' name="fangche" placeholder='要求'></input>
+  </view> -->
+    <view class="lineHeight" type="text">菜品要求:
+     <input class='input-7' name="yaoqiu" placeholder='要求'></input>
+  </view>
+  <view class="lineHeight" type="text">补充说明:
+     <input class='input-7' name="other" placeholder='随便说'></input>
+  </view>
+<view class="lineHeight" type="text">联系方式:
+     <input class='input-7' name="weixin" placeholder='qq/微信/手机号'></input>
+  </view>
+  
+
+  </view>
+
+<view class="weui-uploader">
+  <view class="img-v weui-uploader__bd">
+    <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+        <image class='weui-uploader__img '
+                src="{{item}}"
+                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+        </image>
+    </view>
+     
+      <!-- 用来提示用户上传图片 -->
+      <view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
+  </view>
+  <button formType="submit" class="upload-img-btn" type='primary'>菜品照/上传(仅一张)</button>
+</view>
+  <view class="btn-area">
+    <!-- <button formType="submit">提交</button> -->
+    <button bindtap="showWindows" formType="reset">提交</button>
+  </view>
+</form>

@@ -1,0 +1,31 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="numberInfo">
+ **有任何问题可微信联系yinglingxianghen处理**</view>
+  <view class="container">
+  <view class="userinfo-avatar">
+   <open-data type="userAvatarUrl"></open-data>
+</view>
+    <view class="lineHeight" type="text">菜名
+     <input class='input-7' name="nicheng" placeholder='菜名'></input>
+  </view>
+<view class="lineHeight" type="text">联系方式
+     <input class='input-7' name="weixin" placeholder='联系方式'></input>
+  </view>
+  
+
+  </view>
+
+<view class="weui-uploader">
+  <view class="img-v weui-uploader__bd">
+    <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+      
+    </view>
+     
+  </view>
+ 
+</view>
+  <view class="btn-area">
+    <button formType="submit" type='primary'>提交</button>
+<!-- <button bindtap="showWindows" formType="reset">提交</button> -->
+  </view>
+</form>

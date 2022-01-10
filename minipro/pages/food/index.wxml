@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+
+
+
+<view class="container">
+  <!--轮播图-->
+  <view class="swiper-container">
+    <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for="{{banners}}" wx:key="id">
+        <swiper-item>
+          <image bindtap="tapBanner" data-id="{{item.id}}" src="{{item.pic_url}}" class="slide-image" width="750rpx" height="562.5rpx" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{banners}}" wx:key="unique">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+  <!--分类展示-->
+  <view>
+    <!-- <scroll-view class="type-navbar" scroll-x="true"> -->
+      <!-- <view class="type-box" wx:for-items="{{categories}}" wx:key="id"> -->
+      <view>
+        <view >
+          <!-- {{item.name}} -->
+
+<form bindsubmit="formSubmit" >
+<view class="lineHeight" type="text">
+      <view class="section">
+          <picker mode="region" bindchange="bindRegionChange" name="area" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              <text class='select' name="aaaaaaaaa">{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+            </view>
+         </picker>
+  </view>
+  </view>
+<view class="lineHeight">
+<radio-group name="sex">
+
+      <label><radio value="女"/>女</label>
+      <label><radio value="男"/>男</label>
+    </radio-group></view>
+
+<view class="lineHeight">
+<radio-group name="age">
+
+      <label><radio value="1"/>18-25</label>
+      <label><radio value="2"/>26-30</label>
+      <label><radio value="3"/>30以上</label>
+    </radio-group></view>
+    <button class="box" formType="submit" type='primary' bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">点击确定</button> </form>
+        </view>
+      </view>
+    <!-- </scroll-view> -->
+  </view>
+  <!--搜索框-->
+  <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+    <view class="search-content">
+      <image src="/images/search-pic.png" class="search-icon" />
+      <input placeholder="请输入菜名" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput'>
+      </input>
+      <button class='search-btn' bindtap="toSearch">搜索</button>
+    </view>
+  </view>
+
+  <view class="goods-container">
+    <view class="goods-box" wx:for-items="{{goods}}"  bindtap="toDetailsTap" data-id="{{item.id}}">
+      <view class="img-box">
+        <image src="{{item.pic_url}}" class="image" mode="aspectFill" lazy-load="true" />
+      </view>
+      <view class="goods-title">菜名:{{item.nicheng}}</view>
+      <!-- <view class="goods-title">性别:{{item.sex}} 年龄:{{item.age}}</view> -->
+      <!-- <view class="goods-title">标签:{{item.xueli}}</view> -->
+      <!-- <view style='display:flex;'> -->
+<!-- <view class="goods-price">昵称:{{item.nicheng}}</view> -->
+  <!-- <view class="goods-price">性别:{{item.sex}}</view> -->
+  <!-- <view class="goods-price">年龄:{{item.age}}</view> -->
+  <!-- <view class="goods-price">职业:{{item.zhiye}}</view> -->
+  <!-- <view class="goods-price">身高:{{item.height}}</view> -->
+        <!-- <view wx:if="{{item.price && item.price > 0 && item.min_price != item.price}}" class="goods-price" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view> -->
+      <!-- </view> -->
+    </view>
+  </view>
+  <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">做人有底线</view>
+</view>

@@ -1,0 +1,63 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container"> 
+  <!--商品轮播图--> 
+   <view class="swiper-container">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block wx:for="{{info.pics}}" wx:key="id">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" width="355" height="150" mode="aspectFit" lazy-load="true"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">  
+            <block wx:for="{{info.pics}}" wx:key="unique">
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+            </block>  
+        </view>  
+   </view>
+   <!--商品基本介绍-->
+   <view class="goods-info">
+        <view class="goods-title">菜名:{{info.nicheng}}</view>
+        <!-- <view class="goods-price" style="color:#999;font-size:24rpx;">标签:{{nifo.xueli}}</view> -->
+         <!--<view class="goods-price" style="color:#999;font-size:24rpx;">性别:{{info.sex}}</view> -->
+       
+        <view class="goods-info-fx">
+          <image src='/images/qd.png' />
+          <button open-type="share">点击分享</button>
+          <text>点我分享</text>
+        </view>
+   </view>
+    <view class="goods-des-info">
+    <view class="label-title" style="border-bottom:1px solid #eee;">菜主详情:<text style="color:red"></text></view>
+        <view class="goods-title2">年龄:{{info.age}}</view>
+        <view class="goods-title2">身高:{{info.height}}</view>
+        <view class="goods-title2">所在地:{{info.sprovince}}{{info.scity}}{{info.satrict}}</view>
+        <view class="goods-title2">职业:{{info.zhiye}}</view>
+        <!-- <view class="goods-title">学历:{{info.xueli}}</view> -->
+        <view class="goods-title2">兴趣爱好:{{info.interest}}</view>
+        <!-- <view class="goods-title">收入:{{info.shouru}}</view> -->
+        <view class="goods-title2">联系方式:{{info.weixin}}</view>
+
+        <!-- <view class="goods-text">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+         </view> -->
+    </view>
+
+    <!--用户评价-->
+    <view class="goods-des-info" style="margin-top:35rpx;" wx:if="{{commentList}}">
+        <view class="label-title2" style="border-bottom:1px solid #eee;">其他详情:<text style="color:red"></text></view>
+        <view class="goods-title3">菜品要求:{{info.yaoqiu}}</view>
+        <view class="goods-title3">补充说明:{{info.other}}</view>
+        <view class="goods-text" style="margin-top:15rpx;border-bottom:1px solid #eee;" wx:for="{{commentList}}">
+          <view style="width:100rpx;float:left;">
+            <image style="width: 100rpx; height: 100rpx;" src="{{item.user.avatar_url}}"></image>
+            <view style="text-align:center;width:100rpx;">{{item.score}}</view>
+          </view>
+          <view style="width:550rpx;float:left;margin-left:35rpx;">
+            <view>{{item.content}}</view>
+            <view style="color: #B0B0B0;font-size:24rpx;">{{item.date}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+   

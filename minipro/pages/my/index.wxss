@@ -1,0 +1,85 @@
+/* pages/upload/upload.wxss */
+.img{
+  display: inline-block;
+}
+.userinfo-avatar {
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 2px solid #ebebef;
+}
+
+.pic {
+float:left;
+position:relative;
+margin-right:9px;
+margin-bottom:9px;
+}
+ 
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ 
+.weui-uploader{
+  padding: 10rpx;
+}
+ 
+ 
+.lineHeight {
+  width: 100%;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 30rpx;
+}
+.container {
+  padding: 0;
+  align-items: left;
+  padding-left: 15rpx;
+}
+.numberInfo {
+  font-size: 34rpx;
+  color: red;
+  text-indent: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+/* .input {
+  display: inline-block;
+  border: 1px solid #ccc;
+  line-height: 80rpx;
+  vertical-align: middle;
+  margin-left: 11%;
+  width: 75%;
+} */
+.input,
+.input-7 ,
+.input-15{
+  margin-left: 7%;
+  display: inline-block;
+  /* border: 1px solid #ccc; */
+  line-height: 80rpx;
+  vertical-align: middle;
+  width: 75%;
+}
+.input{
+  margin-left: 11%;
+}
+
+button {
+  width: 100%;
+  margin-top: 30rpx;
+}
+.select{
+  margin-left: 7%;
+  color: #666;
+}
+ 
+.input-15{
+  margin-left:15%;
+}

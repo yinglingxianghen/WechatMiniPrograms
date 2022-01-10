@@ -1,0 +1,15 @@
+flask
+flask-sqlalchemy
+
+flask-debugtoolbar
+
+mysqlclient
+
+flask_script
+
+request
+s
+uwsgi
+
+ yum install mysql-devel gcc gcc-devel python-devel
+ yum install MySQL-python
